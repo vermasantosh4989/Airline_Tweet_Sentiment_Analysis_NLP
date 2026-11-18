@@ -164,6 +164,34 @@ Text preprocessing is an important stage in NLP because raw social media
 text contains mentions, links, hashtags, punctuation, and other elements
 that may not be useful for every modelling task. Negation words must be
 preserved because they can reverse sentiment meaning.
+### Dataset Exploration and Preprocessing
+
+ ### Airline Tweet Sentiment Distribution
+![Airline Tweet Sentiment Distribution](plot/Airline_tweet_sentiment_distribution1.png)
+
+**Conclusion:** Negative tweets form the largest sentiment group, showing that many customers shared unfavourable airline experiences. This class imbalance makes macro-averaged evaluation metrics important.
+
+### Airline-wise Negative Sentiment Share
+![Airline Negative Share](plot/airline_negative_share2.png)
+
+**Conclusion:** This graph compares the proportion of negative feedback received by each airline. Differences between airlines can help identify where customer experience improvements may be needed.
+
+###  Average Tweet Length by Sentiment
+![Average Tweet Length by Sentiment](plot/average_tweet_length_sentiment3.png)
+
+**Conclusion:** Average tweet length compares how much customers write when expressing different sentiments. Tweet length alone does not determine sentiment, but it helps describe differences in customer feedback.
+
+### Negative Word Frequency
+![Negative Word Frequency](plot/negative_word_frequency4.png)
+
+**Conclusion:** Frequent negative words highlight recurring language in dissatisfied customer feedback. These terms can help identify common concerns and support further complaint analysis.
+
+###  Positive Word Frequency
+![Positive Word Frequency](plot/positive_word_frequency5.png)
+
+**Conclusion:** Frequent positive words reveal the vocabulary customers use when describing satisfactory experiences. Comparing positive and negative word patterns helps distinguish language associated with different sentiments.
+
+
 
 ------------------------------------------------------------------------
 
@@ -206,6 +234,15 @@ to terms that are informative within a document. N-Grams preserve short
 word combinations and can capture expressions such as `customer service`
 and `late flight`.
 
+###  TF-IDF Feature Matrix
+![TF-IDF Feature Matrix](plot/tfidf_feature_matrix6.png)
+
+**Conclusion:** The TF-IDF matrix converts tweet text into numerical features based on term importance. Its sparse structure is typical of text data, where each tweet contains only a small portion of the full vocabulary.
+
+###  Top Negative Bigrams
+![Top Negative Bigrams](plot/top_negative_bigrams7.png)
+
+**Conclusion:** Negative bigrams show word combinations that frequently occur in dissatisfied customer tweets. These combinations provide more context than individual words alone.
 ------------------------------------------------------------------------
 
 ## Step 3 --- Word Embeddings: Word2Vec (CBOW and Skip-gram)
@@ -249,6 +286,11 @@ CBOW predicts a target word from its surrounding context, while
 Skip-gram predicts surrounding words from a target word. Word2Vec
 creates dense vector representations that can capture semantic
 relationships beyond simple word counts.
+
+### Word2Vec PCA Visualisation
+![Word2Vec PCA Visualisation](plot/Word2Vec_PCA_Visualization9.png)
+
+**Conclusion:** PCA projects high-dimensional Word2Vec embeddings into two dimensions so selected word relationships can be inspected visually. Nearby words may have similar learned context representations, although this is only a two-dimensional approximation.
 
 ------------------------------------------------------------------------
 
@@ -317,6 +359,16 @@ Accuracy alone does not show how well a model performs across all
 sentiment classes. Macro precision, macro recall, and macro F1 provide a
 more balanced view, especially when negative, neutral, and positive
 tweets are unevenly distributed.
+
+###  Model Comparison
+![Model Comparison](plot/model_comparison8.png)
+
+**Conclusion:** This graph compares the classification performance of the tested models. In the recorded results, TF-IDF with unigrams and bigrams achieved the highest macro F1-score among the four feature approaches.
+
+### Sentiment Approach Comparison
+![Sentiment Approach Comparison](plot/sentiment_approach_comparison10.png)
+
+**Conclusion:** The graph compares heuristic, TextBlob, and machine learning approaches on the same evaluation sample. The recorded machine learning results achieved the strongest overall performance, showing the value of training on domain-specific labelled tweets.
 
 ------------------------------------------------------------------------
 
@@ -390,7 +442,12 @@ The machine learning approach performed best on the recorded evaluation
 sample because it learned patterns from labelled airline tweets.
 Heuristic methods are simple and interpretable, while TextBlob is
 convenient for quick general-purpose sentiment analysis. POS tagging
-helped identify recurring topics in negative customer feedback.
+helped identify recurring topics in negative customer feedback. 
+
+### Top 10 Nouns in Negative Tweets
+![Top 10 Nouns in Negative Tweets](plot/top_10_nouns_negative_tweets11.png)
+
+**Conclusion:** Frequent nouns help reveal topics that appear repeatedly in negative customer feedback. These terms provide clues about complaint themes, although frequency alone does not explain the full reason behind each complaint.
 
 ------------------------------------------------------------------------
 
@@ -436,6 +493,10 @@ http://localhost:8501
 **Live application URL:** Add your Streamlit Community Cloud URL here
 after deployment.
 
+### Streamlit App Start Window
+![Streamlit App Start Window](plot/streamlit_app_start_window.png)
+
+**Conclusion:** This screenshot shows the starting interface of the airline sentiment analysis application. It demonstrates how the trained NLP pipeline is made accessible through a user-friendly interface.
 ------------------------------------------------------------------------
 
 ## 📊 Overall Results Summary
@@ -463,52 +524,6 @@ after deployment.
                                       and POS tagging application created
   -----------------------------------------------------------------------
 
-------------------------------------------------------------------------
-
-## 🖼️ Screenshots and Visualisations
-
-Create an `outputs/` folder in your repository and place your actual
-notebook screenshots in it. Update the filenames below if your saved
-images use different names.
-
-``` text
-outputs/
-├── step1/
-│   ├── airline_sentiment_distribution.png
-│   ├── airline_negative_share.png
-│   ├── top_mentions_and_hashtags.png
-│   └── positive_negative_word_frequency.png
-│
-├── step2/
-│   ├── bow_feature_matrix.png
-│   ├── tfidf_feature_matrix.png
-│   └── top_negative_bigrams.png
-│
-├── step3/
-│   ├── word2vec_similarity_comparison.png
-│   └── Word2Vec_PCA_Visualization.png
-│
-├── step4/
-│   ├── model_comparison.png
-│   ├── confusion_matrix.png
-│   └── important_positive_negative_words.png
-│
-├── step5/
-│   ├── sentiment_approach_comparison.png
-│   └── top_10_nouns_negative_tweets.png
-│
-└── step6/
-    └── streamlit_app_screenshot.png
-```
-
-Example Markdown to display an output image:
-
-``` markdown
-![Word2Vec PCA Visualization](outputs/step3/Word2Vec_PCA_Visualization.png)
-```
-
-Only add image links for screenshots that actually exist in your
-repository.
 
 ------------------------------------------------------------------------
 
@@ -593,30 +608,7 @@ used during model training.
 
 ------------------------------------------------------------------------
 
-## 📁 Suggested Repository Structure
 
-``` text
-Airline-Tweet-Sentiment-Analysis/
-│
-├── README.md
-├── NLP_Practical_Exam_SetB.ipynb
-├── Tweets.csv
-├── app.py
-├── text_preprocessing.py
-├── sentiment_pipeline.pkl
-├── sentiment_model_comparison.csv
-├── summary_report.md
-│
-├── outputs/
-│   ├── step1/
-│   ├── step2/
-│   ├── step3/
-│   ├── step4/
-│   ├── step5/
-│   └── step6/
-│
-└── requirements.txt
-```
 
 This is a suggested structure. Include only files that actually exist in
 your repository. Avoid committing large datasets or model files if they
