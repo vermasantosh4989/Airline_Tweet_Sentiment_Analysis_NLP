@@ -1,18 +1,22 @@
-::: {align="center"}
+<div align="center">
+
 # ✈️ Airline Tweet Sentiment Analysis
 
-### From Text Preprocessing to Machine Learning-Based Sentiment Classification
+### Natural Language Processing· Airline Tweet Analytics from Raw Text to Streamlit App
+
 
 **An end-to-end Natural Language Processing project using Python,
 Jupyter Notebook, Scikit-learn, Word2Vec, NLTK, TextBlob, and
 Streamlit.**
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
-![NLP](https://img.shields.io/badge/Project-NLP-6A5ACD) ![Scikit
-Learn](https://img.shields.io/badge/Scikit--learn-Machine%20Learning-orange?logo=scikitlearn)
-![Jupyter](https://img.shields.io/badge/Environment-Jupyter%20Notebook-F37626?logo=jupyter)
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
+![NLP](https://img.shields.io/badge/Project-NLP-6A5ACD)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--learn-Machine%20Learning-orange?logo=scikitlearn)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-Keras-orange?logo=tensorflow&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Notebook-Jupyter-orange?logo=jupyter)
 ![Streamlit](https://img.shields.io/badge/App-Streamlit-FF4B4B?logo=streamlit)
-:::
+
+</div>
 
 ------------------------------------------------------------------------
 
@@ -673,13 +677,20 @@ techniques, and application development.
 
 ------------------------------------------------------------------------
 
-## 👨‍💻 Author
+<div align="center">
 
-**Santosh Verma**
+# 👨‍💻 Author
 
-*Natural Language Processing Practical Project --- Set B*
+## Santosh Verma
 
-::: {align="center"}
-**Made for learning, experimentation, and practical understanding of
-Natural Language Processing.**
-:::
+### Data Analyst · AI/ML Developer
+
+### Project notes
+
+**Tools:** Python · Pandas · NumPy · Scikit-learn · Matplotlib · Seaborn · Jupyter · NLTK ·
+
+**Before publishing:**Made for learning, experimentation, and practical understanding of Natural Language Processing.
+
+</div>
+
+
