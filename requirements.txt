@@ -1,0 +1,21 @@
+# NLP Airline Tweet Sentiment Analysis
+
+# Data handling
+pandas
+numpy
+
+# Data visualization
+matplotlib
+seaborn
+
+# Natural Language Processing
+nltk
+textblob
+gensim
+
+# Machine Learning
+scikit-learn
+joblib
+
+# Streamlit deployment
+streamlit
